@@ -9,9 +9,11 @@ twoday$newdate <- strptime(paste(twoday$Date, twoday$Time), format = "%Y-%m-%d %
 class(twoday$Sub_metering_1) <- "numeric"
 class(twoday$Sub_metering_2) <- "numeric"
 class(twoday$Sub_metering_3) <- "numeric"
+par(bg = "white")
 plot(twoday$newdate, twoday$Sub_metering_1, ylab = "Energy sub metering", xlab = "", type = "n")
 points(twoday$newdate, twoday$Sub_metering_2, type = "l", col = "red")
 points(twoday$newdate, twoday$Sub_metering_3, type = "l", col = "blue")
 points(twoday$newdate, twoday$Sub_metering_1, type = "l")
+legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, col=c("black", "red", "blue"))
 dev.copy(png, filename = "plot3.png")
 dev.off()

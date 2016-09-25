@@ -13,13 +13,14 @@ class(twoday$Sub_metering_3) <- "numeric"
 class(twoday$Global_active_power) <- "numeric"
 class(twoday$Global_reactive_power) <- "numeric"
 class(twoday$Voltage) <- "numeric"
-par(mfrow = c(2,2))
+par(mfrow = c(2,2), bg = "white")
 plot(twoday$datetime, twoday$Global_active_power, ylab = "Global Active Power", xlab = "", type = "l")
 with(twoday, plot(datetime, Voltage, type = "l"))
 plot(twoday$datetime, twoday$Sub_metering_1, ylab = "Energy sub metering", xlab = "", type = "n")
 points(twoday$datetime, twoday$Sub_metering_2, type = "l", col = "red")
 points(twoday$datetime, twoday$Sub_metering_3, type = "l", col = "blue")
 points(twoday$datetime, twoday$Sub_metering_1, type = "l")
+legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, col=c("black", "red", "blue"))
 with(twoday, plot(datetime, Global_reactive_power, type = "l"))
 dev.copy(png, filename = "plot4.png")
 dev.off()
