@@ -20,7 +20,7 @@ plot(twoday$datetime, twoday$Sub_metering_1, ylab = "Energy sub metering", xlab 
 points(twoday$datetime, twoday$Sub_metering_2, type = "l", col = "red")
 points(twoday$datetime, twoday$Sub_metering_3, type = "l", col = "blue")
 points(twoday$datetime, twoday$Sub_metering_1, type = "l")
-legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, col=c("black", "red", "blue"))
+legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, bty = "n",col=c("black", "red", "blue"))
 with(twoday, plot(datetime, Global_reactive_power, type = "l"))
 dev.copy(png, filename = "plot4.png")
 dev.off()
